@@ -26,6 +26,20 @@ Route::get('/previas/aereo', 'PreviasController@aereo');
 Route::get('/previas/terrestreTable', 'PreviasController@terrestreTable');
 Route::get('/previas/aereoTable', 'PreviasController@aereoTable')->name('aereo');
 
+
+//Pesquisa Regras
+Route::get('/previas/regras','PreviasController@regras');
+Route::post('/previas/regras','PreviasController@listaRegras');
+
+//Apaga regra
+Route::get('/previas/regras/remove/{grupo}/{divisao}/{dataInicial}/{tipo}','PreviasController@remove');
+
+//Formulário de Atualição de Regras
+Route::get('/previas/regras/atualiza/{grupo}/{divisao}/{dataInicial}/{tipo}','PreviasController@atualiza');
+
+//Formulário Para Vizualizar as Regras
+Route::get('/previas/regras/mostra/{grupo}/{divisao}/{dataInicial}/{tipo}','PreviasController@mostra');//->where('id',[0-9]);
+
 /*//dados do ranking,
 Route::get('/previas/ranking', 'PreviasController@ranking');
 //dados da tabela de  ranking,

@@ -3,6 +3,7 @@
 namespace cg\Http\Controllers;
 use cg\models\terrestre;
 use cg\models\aerea;
+use cg\models\Regras;
 use Illuminate\Support\Facades\DB;
 use DataTables;
 use Redirect;
@@ -27,38 +28,35 @@ class PreviasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    
+    public function mostra($grupo,$divisao,$dataInicial,$tipo){
+        
+    }
+    public function remove($grupo,$divisao,$dataInicial,$tipo){
+        
+    }
+    public function atualiza($grupo,$divisao,$dataInicial,$tipo){
+        
+    }
+       
+    public function regras(){
+        $regras = null;
+        return view('regras.regrasLista')->withregras($regras);
+    }
+   
+    public function listaRegras(Request $request){
+        $regras =  Regras::listaRegras($request->input('grupo'),$request->input('divisao'),$request->input('tipo'));
+        return view('regras.regrasLista')->withregras($regras);
+    }
+
+
     public function ranking(){
         return view('previas.ranking');
     }
 
     public function getRanking(Request $request){
-        $terrestre = DB::table('terrestre')->select(
-            'Cliente',
-            DB::raw("SUM(IIF(Alerta_Geral<>'Ok',1,0)) as Erros")
-        )->where([
-            ['GrupoCLi','=',$request->input('grupo')],
-            ['divisao','=',$request->input('divisao')],
-            ['Cliente','not like','%particular%'],
-            ['Cliente','not like','%evento%'],
-            ['Cliente','not like','%lazer%']
-        ])->wherenotIn('Fil',['JRS','FEE','TRR','CLT','EVE','LAZ','COB','CMT','PAC','VCT','PRE','STS'])
-        ->groupBy('Cliente')
-        ->get();
+        $terrestre = terrestre::getRanking($request->input('grupo'),$request->input('divisao'));
 
-            $aereo = DB::table('aereo')->select(
-                'Cliente',
-                DB::raw("SUM(IIF(Alerta_Geral<>'Ok',1,0)) as Erros")
-            )->where([
-                ['GrupoCLi','=',$request->input('grupo')],
-                ['divisao','=',$request->input('divisao')],
-                ['Cliente','not like','%particular%'],
-                ['Cliente','not like','%evento%'],
-                ['Cliente','not like','%lazer%']
-            ])->wherenotIn('Fil',['JRS','FEE','TRR','CLT','EVE','LAZ','COB','CMT','PAC','VCT','PRE','STS'])
-            ->groupBy('Cliente')
-            ->get();
-
+        $aereo = aerea::getRanking($request->input('grupo'),$request->input('divisao'));
     }
 
     public function farolGerencial()
@@ -82,66 +80,15 @@ class PreviasController extends Controller
 
     public function aereoTable(Request $request)
     {
-        $previas = null;
-        switch($request->input('erros')){
-            case 'Sim':
-            $previas = DB::table('aerea')->where([
-                ['GrupoCLi','=',$request->input('grupo')],
-                ['divisao','=',$request->input('divisao')],
-                ['Cliente','not like','%particular%'],
-                ['Cliente','not like','%evento%'],
-                ['Cliente','not like','%lazer%'],
-                ['Referencia','not like','%ADM%'],
-                ['Alerta_Geral','<>','OK']
-            ])->wherenotIn('Fil',['JRS','FEE','TRR','CLT','EVE','LAZ','COB','CMT','PAC','VCT','PRE','STS'])
-            ->get();
-            return Datatables::of($previas)->make();
-            break;
-
-            case 'Nao':
-            $previas = DB::table('aerea')->where([
-                ['GrupoCLi','=',$request->input('grupo')],
-                ['divisao','=',$request->input('divisao')],
-                ['Cliente','not like','%particular%'],
-                ['Cliente','not like','%evento%'],
-                ['Referencia','not like','%ADM%'],
-                ['Cliente','not like','%lazer%'],
-                ['Cliente','not like','%lazer%']
-                ])->wherenotIn('Fil',['JRS','FEE','TRR','CLT','EVE','LAZ','COB','CMT','PAC','VCT','PRE','STS'])->get();
-            return Datatables::of($previas)->make();
-            break;
-        }
+        $previas =  aerea::tabelaAerea($request->input('grupo'),$request->input('divisao'),$request->input('erros'));
+        return Datatables::of($previas)->make();
     }
 
     public function terrestreTable(Request $request)
     {   
-        $previas = null;
-        switch($request->input('erros')){
-            case 'Sim':
-            $previas = DB::table('terrestre')->where([
-                ['GrupoCLi','=',$request->input('grupo')],
-                ['divisao','=',$request->input('divisao')],
-                ['Cliente','not like','%particular%'],
-                ['Cliente','not like','%evento%'],
-                ['Cliente','not like','%lazer%'],
-                ['Alerta_Geral','<>','OK']
-            ])->wherenotIn('Fil',['JRS','FEE','TRR','CLT','EVE','LAZ','COB','CMT','PAC','VCT','PRE','STS'])
-            ->get();
-            return Datatables::of($previas)->make();
-            break;
-
-            case 'Nao':
-            $previas = DB::table('terrestre')->where([
-                ['GrupoCLi','=',$request->input('grupo')],
-                ['divisao','=',$request->input('divisao')],
-                ['Cliente','not like','%particular%'],
-                ['Cliente','not like','%evento%'],
-                ['Cliente','not like','%lazer%']
-                ])->wherenotIn('Fil',['JRS','FEE','TRR','CLT','EVE','LAZ','COB','CMT','PAC','VCT','PRE','STS'])->get();
-            return Datatables::of($previas)->make();
-            break;
-        }
-        
+        $previas =  terrestre::tabelaTerrestre($request->input('grupo'),$request->input('divisao'),$request->input('erros'));
+        return Datatables::of($previas)->make();
+               
     }
 
 }
