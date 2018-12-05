@@ -23,22 +23,25 @@ Route::get('/previas/terrestre', 'PreviasController@terrestre');
 Route::get('/previas/aereo', 'PreviasController@aereo');
 
 //dados da datatable nas prévias
-Route::get('/previas/terrestreTable', 'PreviasController@terrestreTable');
-Route::get('/previas/aereoTable', 'PreviasController@aereoTable')->name('aereo');
+Route::post('/previas/terrestreTable', 'PreviasController@terrestreTable');
+Route::post('/previas/aereoTable', 'PreviasController@aereoTable')->name('aereo');
 
 
 //Pesquisa Regras
-Route::get('/previas/regras','PreviasController@regras');
-Route::post('/previas/regras','PreviasController@listaRegras');
+Route::get('/previas/regras','RegrasController@regras');
+Route::post('/previas/regras','RegrasController@listaRegras');
+
+//Cadastro Regras
+Route::get('/previas/regras/cadastro','RegrasController@cadastro');
 
 //Apaga regra
-Route::get('/previas/regras/remove/{grupo}/{divisao}/{dataInicial}/{tipo}','PreviasController@remove');
+Route::get('/previas/regras/remove/{grupo}/{divisao}/{dataInicial}/{tipo}','RegrasController@remove');
 
 //Formulário de Atualição de Regras
-Route::get('/previas/regras/atualiza/{grupo}/{divisao}/{dataInicial}/{tipo}','PreviasController@atualiza');
+Route::get('/previas/regras/atualiza/{grupo}/{divisao}/{dataInicial}/{tipo}','RegrasController@atualiza');
 
 //Formulário Para Vizualizar as Regras
-Route::get('/previas/regras/mostra/{grupo}/{divisao}/{dataInicial}/{tipo}','PreviasController@mostra');//->where('id',[0-9]);
+Route::get('/previas/regras/mostra/{grupo}/{divisao}/{dataInicial}/{tipo}','RegrasController@mostra');//->where('id',[0-9]);
 
 /*//dados do ranking,
 Route::get('/previas/ranking', 'PreviasController@ranking');

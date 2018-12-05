@@ -3,7 +3,6 @@
 namespace cg\Http\Controllers;
 use cg\models\terrestre;
 use cg\models\aerea;
-use cg\models\Regras;
 use Illuminate\Support\Facades\DB;
 use DataTables;
 use Redirect;
@@ -28,34 +27,13 @@ class PreviasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function mostra($grupo,$divisao,$dataInicial,$tipo){
-        
-    }
-    public function remove($grupo,$divisao,$dataInicial,$tipo){
-        
-    }
-    public function atualiza($grupo,$divisao,$dataInicial,$tipo){
-        
-    }
-       
-    public function regras(){
-        $regras = null;
-        return view('regras.regrasLista')->withregras($regras);
-    }
-   
-    public function listaRegras(Request $request){
-        $regras =  Regras::listaRegras($request->input('grupo'),$request->input('divisao'),$request->input('tipo'));
-        return view('regras.regrasLista')->withregras($regras);
-    }
-
-
+    
     public function ranking(){
         return view('previas.ranking');
     }
 
     public function getRanking(Request $request){
         $terrestre = terrestre::getRanking($request->input('grupo'),$request->input('divisao'));
-
         $aereo = aerea::getRanking($request->input('grupo'),$request->input('divisao'));
     }
 

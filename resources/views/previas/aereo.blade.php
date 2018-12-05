@@ -33,9 +33,9 @@
 @section('content')
 <div class="container">            
    
-    <form action="" method="GET" class ="form-horizontal">
+    <form action="" method="POST" class ="form-horizontal">
         @csrf
-      <div class="form-group row">
+       <div class="form-group row">
         <label for="grupo" class="col-sm-1 col-form-label">Grupo:</label>
         <div class="col-sm-2">
         <input type="text" class="form-control" id="grupo"  name="grupo" placeholder="Grupo Ex: LQ" aria-describedby="grupolHelp" required>

@@ -9,23 +9,11 @@
 @section('css')
     <link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css">    
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/dataTables.jqueryui.min.css">
-    <link rel="stylesheet" href="//cdn.datatables.net/select/1.2.7/css/select.dataTables.min.css">
-    <link rel="stylesheet" href="//cdn.datatables.net/buttons/1.5.2/css/buttons.dataTables.min.css">
-    <link rel="stylesheet" href="//cdn.datatables.net/colreorder/1.5.1/css/colReorder.dataTables.min.css">
     <link rel="stylesheet" href="/css/custom.css">
   @stop
 @section('js')
     <script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
-    <script src="//cdn.datatables.net/select/1.2.7/js/dataTables.select.min.js"></script>
-    <script src="//cdn.datatables.net/buttons/1.5.2/js/dataTables.buttons.min.js"></script>
-    <script src="//cdn.datatables.net/buttons/1.5.2/js/buttons.flash.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
-    <script src="//cdn.datatables.net/buttons/1.5.2/js/buttons.html5.min.js"></script>
-    <script src="//cdn.datatables.net/buttons/1.5.2/js/buttons.print.min.js"></script>
-    <script src="//cdn.datatables.net/colreorder/1.5.1/js/dataTables.colReorder.min.js"></script>
     <script src="/js/regrasCustom.js"></script>
 @stop
 
@@ -39,7 +27,7 @@
         <label for="grupo" class="col-sm-1 col-form-label">Grupo:</label>
         <div class="col-sm-2">
         <input type="text" class="form-control" id="grupo"  value="{{old('grupo')}}" name="grupo" placeholder="Grupo Ex: LQ" aria-describedby="grupolHelp" required>
-        </div>
+    </div>
 
         <label for="divisao" class="col-sm-1 col-form-label">Divisao:</label>
         <div class="col-sm-2">
@@ -84,7 +72,7 @@
             <th>mostra</th>
             <th>atualiza</th>
             <th>remove</th>
-            </tr>
+        </tr>
         
         @foreach($regras as $r)            
         <tr>
@@ -94,25 +82,29 @@
             <td>{{$r->cliente}}</td>
             <td>{{$r->dataInicial}}</td>
             <td>{{$r->dataFinal}}</td>
-            <td><a href="{{action('PreviasController@mostra',[$r->grupo,$r->divisao,$r->dataInicial,$r->tipo])}}">
+            <td><a href="{{action('RegrasController@mostra',[$r->grupo,$r->divisao,$r->dataInicial,$r->tipo])}}">
             <span class="glyphicon glyphicon-search"></span>
             </a></td>
-            <td><a href="{{action('PreviasController@atualiza',[$r->grupo,$r->divisao,$r->dataInicial,$r->tipo])}}">
+            <td><a href="{{action('RegrasController@atualiza',[$r->grupo,$r->divisao,$r->dataInicial,$r->tipo])}}">
                 <span class="glyphicon glyphicon-refresh"></span>
             </a></td>
-            <td><a href="{{action('PreviasController@remove',[$r->grupo,$r->divisao,$r->dataInicial,$r->tipo])}}">
+            <td><a href="{{action('RegrasController@remove',[$r->grupo,$r->divisao,$r->dataInicial,$r->tipo])}}">
                 <span class="glyphicon glyphicon-trash"></span>
             </a></td>                             
         </tr>
-
         @endforeach
      </table>
 
 @endif
+@if (empty($regras) && @isset($regras))  
+    <div class="alert alert-danger">
+        Nenhuma regra cadastrada para o grupo {{old('grupo')}} e divisao  {{old('divisao')}} informados
+    </div>
+@endif  
 
 @if (count($errors)>0)  
     <div class="alert alert-danger">
-        Nenhuma regra cadastrada rara o grupo {{old('grupo')}} e divisao  {{old('divisao')}} informados
+        Houve um erro durante a solicitação do grupo {{old('grupo')}} e divisao  {{old('divisao')}} informados
     </div>
 @endif  
 

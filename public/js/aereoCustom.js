@@ -9,10 +9,11 @@ $('#pesquisarAerea').on('click', function () {
 
         $.ajax({
             url: "/previas/aereoTable",
+            type: "POST",
             data: {
                 grupo: $('#grupo').val(),
                 divisao: $('#divisao option:selected').val(),
-                //dk:$('#dks').val(),
+                _token:$( "input[name='_token']" ).val(),
                 erros: $('#erros option:selected').val()
             },
 

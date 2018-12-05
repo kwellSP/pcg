@@ -34,7 +34,7 @@
 
 <div class="container">            
    
-        <form action="" method="GET" class ="form-horizontal">
+        <form action="" method="POST" class ="form-horizontal">
             @csrf
           <div class="form-group row">
             <label for="grupo" class="col-sm-1 col-form-label">Grupo:</label>

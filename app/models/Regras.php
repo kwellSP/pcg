@@ -21,7 +21,7 @@ class Regras extends Model
         return $regras;
     }
 
-    public static function criaValidacao(
+    public static function criaRegra(
         $oscar,
         $nomeCampo,
         $OS,
@@ -35,6 +35,6 @@ class Regras extends Model
     ){
         $regra = null;
 
-
+        return $regra;
     }
 }
