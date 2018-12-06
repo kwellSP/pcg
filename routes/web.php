@@ -33,6 +33,7 @@ Route::post('/previas/regras','RegrasController@listaRegras');
 
 //Cadastro Regras
 Route::get('/previas/regras/cadastro','RegrasController@cadastro');
+Route::post('/previas/regras/cadastro/cadastrar','RegrasController@cadastrar');
 
 //Apaga regra
 Route::get('/previas/regras/remove/{grupo}/{divisao}/{dataInicial}/{tipo}','RegrasController@remove');

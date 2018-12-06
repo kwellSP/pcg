@@ -46,4 +46,7 @@ class RegrasController extends Controller
     public function cadastro(){
         return view('regras.cadastroRegras');
     }
+    public function cadastrar(Request $request){
+        var_dump($request->all());
+    }
 }
