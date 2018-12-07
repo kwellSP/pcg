@@ -1,167 +1,167 @@
 
-<div class="hidden" id="tbOscar1" name="tbOscar">
-        <h4 class="text-center">Oscar1 (Centro de Custo)</h4>
-  <div class="form-group form-group-sm">
+<div class="hidden" id="tbOscar3" name="tbOscar">
+    <h4 class="text-center">Oscar3 (Doc Cli)</h4>
+<div class="form-group form-group-sm">
 
-    <label for="obrigatorioO1" class="col-md-1">Requirido?</label>
-      <div class="col-md-2">
-          <select class="form-control" id="obrigatorioO1" name="obrigatorioO1" value="{{old('obrigatórioO1')}}">
-              <option value="nao">não</option>
-              <option value="sim">sim</option>
-          </select>   
-    </div>
-    <label for="quebrasO1" class="col-md-1">Quebrar</label>
-    <div class="col-md-2">
-        <select class="form-control" id="quebrasO1" name="quebrasO1" value="{{old('quebrasO1')}}">
-            <option value="nao">não</option>
-            <option value="sim">sim</option>
+<label for="obrigatorioO3" class="col-md-1">Requirido?</label>
+  <div class="col-md-2">
+      <select class="form-control" id="obrigatorioO3" name="obrigatorioO3" value="{{old('obrigatórioO3')}}">
+          <option value="nao">não</option>
+          <option value="sim">sim</option>
+      </select>   
+</div>
+<label for="quebrasO3" class="col-md-1">Quebrar</label>
+<div class="col-md-2">
+    <select class="form-control" id="quebrasO3" name="quebrasO3" value="{{old('quebrasO3')}}">
+        <option value="nao">não</option>
+        <option value="sim">sim</option>
+    </select>   
+</div>
+<label for="numQuebrasO3" class="col-md-2">Num. Quebras</label>
+<div class="col-md-2">
+    <input type ="number"  min="2" class="form-control" id="numQuebrasO3" name="numQuebrasO3" value="{{old('numQuebrasO3')}}">
+</div>
+</div>
+
+<div class="form-group form-group-sm">
+  <label for="OSO3" class="col-md-1">OS?</label>
+  <div class="col-md-2">
+      <select class="form-control" id="OSO3" name="OSO3" value="{{old('OSO3')}}">
+          <option value="nao">não</option>
+          <option value="sim">sim</option>
         </select>   
-    </div>
-    <label for="numQuebrasO1" class="col-md-2">Num. Quebras</label>
-    <div class="col-md-2">
-        <input type ="number"  min="2" class="form-control" id="numQuebrasO1" name="numQuebrasO1" value="{{old('numQuebrasO1')}}">
-    </div>
+   </div>
+   <label for="inOSO3" class="col-md-1">Dados OS</label>
+  <div class="col-md-3">
+    <input type ="text"  class="form-control" id="inOSO3" name="inOSO3" placeholder="SS,SN,NN" value="{{old('inOSO3')}}">
+</div>
+
+
+</div>  
+<div class="form-group form-group-sm">
+<label for="minO3" class="col-md-1">Mínimo</label>
+<div class="col-md-2">
+    <input type ="number" min="1" class="form-control" id="minO3" name="minO3" value="{{old('minO3')}}">
+</div>
+
+<label for="maxO3" class="col-md-1">Máximo</label>
+<div class="col-md-2">
+    <input type ="number" min="1" class="form-control" id="maxO3" name="maxO3" value="{{old('maxO3')}}">
+</div>
+
+  <label for="typeO3" class="col-md-1">Tipo</label>
+  <div class="col-md-2">
+      <select class="form-control" id="typeO3" name="typeO3" value="{{old('typeO3')}}">
+          <option value="text">texto</option>
+          <option value="number">número</option>
+      </select>   
+   </div>
+</div>
+
+<div class="quebrasO3">
+  <h4 class="text-center">Quebras Oscar3 (Doc Cli)</h4>
+<div class="form-group form-group-sm">
+  <label for="minO3P1" class="col-md-1">Mínimo</label>
+  <div class="col-md-2">
+      <input type ="number" min="1" class="form-control" id="minO3P1" name="minO3P1" value="{{old('minO3P1')}}">
+  </div>
+  
+  <label for="maxO3P1" class="col-md-1">Máximo</label>
+  <div class="col-md-2">
+      <input type ="number" min="1" class="form-control" id="maxO3P1" name="maxO3P1" value="{{old('maxO3P1')}}">
   </div>
 
-  <div class="form-group form-group-sm">
-      <label for="OSO1" class="col-md-1">OS?</label>
-      <div class="col-md-2">
-          <select class="form-control" id="OSO1" name="OSO1" value="{{old('OSO1')}}">
-              <option value="nao">não</option>
-              <option value="sim">sim</option>
-            </select>   
-       </div>
-       <label for="inOSO1" class="col-md-1">Dados OS</label>
-      <div class="col-md-3">
-        <input type ="text"  class="form-control" id="inOSO1" name="inOSO1" placeholder="SS,SN,NN" value="{{old('inOSO1')}}">
-  </div>
-
-    
-  </div>  
-  <div class="form-group form-group-sm">
-    <label for="minO1" class="col-md-1">Mínimo</label>
+    <label for="typeO3P1" class="col-md-1">Tipo</label>
     <div class="col-md-2">
-        <input type ="number" min="1" class="form-control" id="minO1" name="minO1" value="{{old('minO1')}}">
-    </div>
-    
-    <label for="maxO1" class="col-md-1">Máximo</label>
-    <div class="col-md-2">
-        <input type ="number" min="1" class="form-control" id="maxO1" name="maxO1" value="{{old('maxO1')}}">
-    </div>
+        <select class="form-control" id="typeO3P1" name="typeO3P1" value="{{old('typeO3P1')}}">
+            <option value="text">texto</option>
+            <option value="number">número</option>
+        </select>   
+     </div>
 
-      <label for="typeO1" class="col-md-1">Tipo</label>
-      <div class="col-md-2">
-          <select class="form-control" id="typeO1" name="typeO1" value="{{old('typeO1')}}">
-              <option value="text">texto</option>
-              <option value="number">número</option>
-          </select>   
-       </div>
-  </div>
+     <label for="dadosO3P1" class="col-md-1">Dados</label>
+     <div class="col-md-2">
+     <input type ="text" class="form-control" id="dadosO3P1" name="dadosO3P1" placeholder="separar por virgulas" value="{{old('dadosO3P1')}}">
+     </div>
+</div>
 
-  <div class="quebrasO1">
-      <h4 class="text-center">Quebras Oscar1 (Centro de Custo)</h4>
-  <div class="form-group form-group-sm">
-      <label for="minO1P1" class="col-md-1">Mínimo</label>
-      <div class="col-md-2">
-          <input type ="number" min="1" class="form-control" id="minO1P1" name="minO1P1" value="{{old('minO1P1')}}">
-      </div>
-      
-      <label for="maxO1P1" class="col-md-1">Máximo</label>
-      <div class="col-md-2">
-          <input type ="number" min="1" class="form-control" id="maxO1P1" name="maxO1P1" value="{{old('maxO1P1')}}">
-      </div>
-
-        <label for="typeO1P1" class="col-md-1">Tipo</label>
+<div class="form-group form-group-sm">
+        <label for="minO3P2" class="col-md-1">Mínimo</label>
         <div class="col-md-2">
-            <select class="form-control" id="typeO1P1" name="typeO1P1" value="{{old('typeO1P1')}}">
-                <option value="text">texto</option>
-                <option value="number">número</option>
-            </select>   
-         </div>
+            <input type ="number" min="1" class="form-control" id="minO3P2" name="minO3P2" value="{{old('minO3P2')}}">
+        </div>
+        
+        <label for="maxO3P2" class="col-md-1">Máximo</label>
+        <div class="col-md-2">
+            <input type ="number" min="1" class="form-control" id="maxO3P2" name="maxO3P2" value="{{old('maxO3P2')}}">
+        </div>
+  
+          <label for="typeO3P2" class="col-md-1">Tipo</label>
+          <div class="col-md-2">
+              <select class="form-control" id="typeO3P2" name="typeO3P2" value="{{old('typeO3P2')}}">
+                  <option value="text">texto</option>
+                  <option value="number">número</option>
+              </select>   
+           </div>
+  
+           <label for="dadosO3P2" class="col-md-1">Dados</label>
+           <div class="col-md-2">
+           <input type ="text" class="form-control" id="dadosO3P2" name="dadosO3P2" placeholder="separar por virgulas" value="{{old('dadosO3P2')}}">
+           </div>
+</div>
 
-         <label for="dadosO1P1" class="col-md-1">Dados</label>
-         <div class="col-md-2">
-         <input type ="text" class="form-control" id="dadosO1P1" name="dadosO1P1" placeholder="separar por virgulas" value="{{old('dadosO1P1')}}">
-         </div>
-    </div>
+<div class="form-group form-group-sm">
+        <label for="minO3P3" class="col-md-1">Mínimo</label>
+        <div class="col-md-2">
+            <input type ="number" min="1" class="form-control" id="minO3P3" name="minO3P3" value="{{old('minO3P3')}}">
+        </div>
+        
+        <label for="maxO3P3" class="col-md-1">Máximo</label>
+        <div class="col-md-2">
+            <input type ="number" min="1" class="form-control" id="maxO3P3" name="maxO3P3" value="{{old('maxO3P3')}}">
+        </div>
+  
+          <label for="typeO3P3" class="col-md-1">Tipo</label>
+          <div class="col-md-2">
+              <select class="form-control" id="typeO3P3" name="typeO3P3" value="{{old('typeO3P3')}}">
+                  <option value="text">texto</option>
+                  <option value="number">número</option>
+              </select>   
+           </div>
+  
+           <label for="dadosO3P3" class="col-md-1">Dados</label>
+           <div class="col-md-2">
+           <input type ="text" class="form-control" id="dadosO3P3" name="dadosO3P3" placeholder="separar por virgulas" value="{{old('dadosO3P3')}}">
+           </div>
+</div>
 
-    <div class="form-group form-group-sm">
-            <label for="minO1P2" class="col-md-1">Mínimo</label>
-            <div class="col-md-2">
-                <input type ="number" min="1" class="form-control" id="minO1P2" name="minO1P2" value="{{old('minO1P2')}}">
-            </div>
-            
-            <label for="maxO1P2" class="col-md-1">Máximo</label>
-            <div class="col-md-2">
-                <input type ="number" min="1" class="form-control" id="maxO1P2" name="maxO1P2" value="{{old('maxO1P2')}}">
-            </div>
-      
-              <label for="typeO1P2" class="col-md-1">Tipo</label>
-              <div class="col-md-2">
-                  <select class="form-control" id="typeO1P2" name="typeO1P2" value="{{old('typeO1P2')}}">
-                      <option value="text">texto</option>
-                      <option value="number">número</option>
-                  </select>   
-               </div>
-      
-               <label for="dadosO1P2" class="col-md-1">Dados</label>
-               <div class="col-md-2">
-               <input type ="text" class="form-control" id="dadosO1P2" name="dadosO1P2" placeholder="separar por virgulas" value="{{old('dadosO1P2')}}">
-               </div>
-    </div>
+<div class="form-group form-group-sm">
+        <label for="minO3P4" class="col-md-1">Mínimo</label>
+        <div class="col-md-2">
+            <input type ="number" min="1" class="form-control" id="minO3P4" name="minO3P4" value="{{old('minO3P4')}}">
+        </div>
+        
+        <label for="maxO3P4" class="col-md-1">Máximo</label>
+        <div class="col-md-2">
+            <input type ="number" min="1" class="form-control" id="maxO3P4" name="maxO3P4" value="{{old('maxO3P4')}}">
+        </div>
+  
+          <label for="typeO3P4" class="col-md-1">Tipo</label>
+          <div class="col-md-2">
+              <select class="form-control" id="typeO3P4" name="typeO3P4" value="{{old('typeO3P4')}}">
+                  <option value="text">texto</option>
+                  <option value="number">número</option>
+              </select>   
+           </div>
+  
+           <label for="dadosO3P4" class="col-md-1">Dados</label>
+           <div class="col-md-2">
+           <input type ="text" class="form-control" id="dadosO3P4" name="dadosO3P4" placeholder="separar por virgulas" value="{{old('dadosO3P4')}}">
+           </div>
+</div>
 
-    <div class="form-group form-group-sm">
-            <label for="minO1P3" class="col-md-1">Mínimo</label>
-            <div class="col-md-2">
-                <input type ="number" min="1" class="form-control" id="minO1P3" name="minO1P3" value="{{old('minO1P3')}}">
-            </div>
-            
-            <label for="maxO1P3" class="col-md-1">Máximo</label>
-            <div class="col-md-2">
-                <input type ="number" min="1" class="form-control" id="maxO1P3" name="maxO1P3" value="{{old('maxO1P3')}}">
-            </div>
-      
-              <label for="typeO1P3" class="col-md-1">Tipo</label>
-              <div class="col-md-2">
-                  <select class="form-control" id="typeO1P3" name="typeO1P3" value="{{old('typeO1P3')}}">
-                      <option value="text">texto</option>
-                      <option value="number">número</option>
-                  </select>   
-               </div>
-      
-               <label for="dadosO1P3" class="col-md-1">Dados</label>
-               <div class="col-md-2">
-               <input type ="text" class="form-control" id="dadosO1P3" name="dadosO1P3" placeholder="separar por virgulas" value="{{old('dadosO1P3')}}">
-               </div>
-    </div>
+</div> 
 
-    <div class="form-group form-group-sm">
-            <label for="minO1P4" class="col-md-1">Mínimo</label>
-            <div class="col-md-2">
-                <input type ="number" min="1" class="form-control" id="minO1P4" name="minO1P4" value="{{old('minO1P4')}}">
-            </div>
-            
-            <label for="maxO1P4" class="col-md-1">Máximo</label>
-            <div class="col-md-2">
-                <input type ="number" min="1" class="form-control" id="maxO1P4" name="maxO1P4" value="{{old('maxO1P4')}}">
-            </div>
-      
-              <label for="typeO1P4" class="col-md-1">Tipo</label>
-              <div class="col-md-2">
-                  <select class="form-control" id="typeO1P4" name="typeO1P4" value="{{old('typeO1P4')}}">
-                      <option value="text">texto</option>
-                      <option value="number">número</option>
-                  </select>   
-               </div>
-      
-               <label for="dadosO1P4" class="col-md-1">Dados</label>
-               <div class="col-md-2">
-               <input type ="text" class="form-control" id="dadosO1P4" name="dadosO1P4" placeholder="separar por virgulas" value="{{old('dadosO1P4')}}">
-               </div>
-    </div>
-
-  </div> 
-
-  <label for="regraO1" class="text-center col-md-12">Regra do Oscar 1</label>
-  <textarea class="form-control" rows ="3" disabled id ="regraO1" name ="regraO1" value="{{old('regraO1')}}"> </textarea>
+<label for="regraO3" class="text-center col-md-12">Regra do Oscar 3</label>
+<textarea class="form-control" rows ="3" disabled id ="regraO3" name ="regraO3" value="{{old('regraO3')}}"> </textarea>
 </div>

@@ -1,4 +1,4 @@
-<div class="" id="tbOscar2" name="tbOscar">
+<div class="hidden" id="tbOscar2" name="tbOscar">
         <h4 class="text-center">Oscar2 (Doc Cli)</h4>
   <div class="form-group form-group-sm">
 

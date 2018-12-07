@@ -1,6 +1,6 @@
 
-<div class="hidden" id="tbOscar5" name="tbOscar">
-    <h4 class="text-center">Oscar5 (Obs 2)</h4>
+<div class="hidden" id="tbOscar4" name="tbOscar">
+    <h4 class="text-center">Oscar4 (Obs 2)</h4>
 <div class="form-group form-group-sm">
 
 <label for="obrigatorioO5" class="col-md-1">Requirido?</label>
@@ -59,7 +59,7 @@
 </div>
 
 <div class="quebrasO5">
-  <h4 class="text-center">Quebras Oscar5 (Obs 2)</h4>
+  <h4 class="text-center">Quebras Oscar4 (Obs 2)</h4>
 <div class="form-group form-group-sm">
   <label for="minO5P1" class="col-md-1">Mínimo</label>
   <div class="col-md-2">
@@ -162,6 +162,6 @@
 
 </div> 
 
-<label for="regraO5" class="text-center col-md-12">Regra do Oscar 5</label>
+<label for="regraO5" class="text-center col-md-12">Regra do Oscar 4</label>
 <textarea class="form-control" rows ="3" disabled id ="regraO5" name ="regraO5" value="{{old('regraO5')}}"> </textarea>
 </div>

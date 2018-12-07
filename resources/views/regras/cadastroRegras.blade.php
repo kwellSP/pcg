@@ -52,28 +52,28 @@
           <label for="oscar" class="col-md-1">Oscar</label>
           <div class="col-md-4">
               <select class="form-control" id="oscar" name="oscar" value="{{old('oscar')}}">
-                  <option value="oscar1"> oscar1 (Centro de Custo)</option>
-                  <option value="oscar2"> oscar2 (Produto)</option>
-                  <option value="oscar3"> oscar3 (Doc Cli)</option>
-                  <option value="oscar4"> oscar4 (OBS1)</option>
-                  <option value="oscar5"> oscar5 (OBS2)</option>
-                  <option value="oscar6"> oscar6 (OBS3)</option>
-                  <option value="oscar7"> oscar7 (OBS4)</option>
+                  <option value="tbOscar1"> oscar1 (Centro de Custo)</option>
+                  <option value="tbOscar2"> oscar2 (Produto)</option>
+                  <option value="tbOscar3"> oscar3 (Doc Cli)</option>
+                  <option value="tbOscar4"> oscar4 (OBS1)</option>
+                  <option value="tbOscar5"> oscar5 (OBS2)</option>
+                  <option value="tbOscar6"> oscar6 (OBS3)</option>
+                  <option value="tbOscar7"> oscar7 (OBS4)</option>
               </select>   
           </div>
       </div>    
 
- @include('regras.formOscars.O1')
- @include('regras.formOscars.O2')
- @include('regras.formOscars.O3')
- @include('regras.formOscars.O4')
- @include('regras.formOscars.O5')
- @include('regras.formOscars.O6')
- @include('regras.formOscars.O7')
+        @include('regras.formOscars.O1')
+        @include('regras.formOscars.O2')
+        @include('regras.formOscars.O3')
+        @include('regras.formOscars.O4')
+        @include('regras.formOscars.O5')
+        @include('regras.formOscars.O6')
+        @include('regras.formOscars.O7')
  
 
       <div class="form-group form-group-sm">
-        <input type="submit" class="btn btn-info"></input>
+        <input type="submit" class="btn btn-info" value="Cadastrar"></input>
       </div>    
     
     </form>
