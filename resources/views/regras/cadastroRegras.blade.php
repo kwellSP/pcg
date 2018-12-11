@@ -71,9 +71,13 @@
         @include('regras.formOscars.O6')
         @include('regras.formOscars.O7')
  
-
+      <br>
+      <br>
       <div class="form-group form-group-sm">
-        <input type="submit" class="btn btn-info" value="Cadastrar"></input>
+            <div class="col-md-2">
+                <input type="submit" class="btn btn-info" value="Cadastrar"></input>
+            </div>
+        
       </div>    
     
     </form>

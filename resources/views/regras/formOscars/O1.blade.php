@@ -16,10 +16,10 @@
               </select>
            </div>
            
-           <label for="numQuebrasO1" class="col-md-2 hidden numQuebrasO1" name="numQuebrasO1">Num. Quebras</label>
+           <!--<label for="numQuebrasO1" class="col-md-2 hidden numQuebrasO1" name="numQuebrasO1">Num. Quebras</label>
            <div class="col-md-2">
               <input type ="number"  min="2" max="7" class="form-control hidden numQuebrasO1" id="numQuebrasO1" name="numQuebrasO1" value="{{old('numQuebrasO1')}}">
-           </div>
+           </div>-->
         </div>
             <div id="rulesO1" class="hidden">
                 <div class="form-group form-group-sm">
@@ -140,8 +140,8 @@
               </div>
            </div>
         </div>
-         <!--
-              <label for="regraO1" class="text-center col-md-12">Regra do Oscar 1</label>
-              <textarea class="form-control" rows ="3" disabled id ="regraO1" name ="regraO1" value="{{old('regraO1')}}"> </textarea>
-              -->
+            <div class="regraO1 hidden">
+              <label for="regraO1" class="text-center col-md-12 hidden">Regra do Oscar 1</label>
+              <textarea class="form-control" rows ="3" id ="regraO1" name ="regraO1" value="{{old('regraO1')}}"> </textarea>
+            </div>  
      </div>

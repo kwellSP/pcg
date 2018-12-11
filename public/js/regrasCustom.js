@@ -14,35 +14,52 @@
         $('#tbOscar7').addClass('hidden');
         $('#'+oscar).removeClass('hidden');
     };
-
+    
     //função para ocultar partes do formulário
-    $("#obrigatorioO1").change(function() {
-        if( $('#obrigatorioO1 option:selected').val()=="sim"){
-            $('.quebrarO1').removeClass('hidden');
-        }else{
-            $('quebrarO1').addClass('hidden');
-        }
+    $("select").on("change",function() {
+       
+        if(this.id.substring(0,11)=="obrigatorio"){
+            ocultaRegras(this.id.substring(0,11),this.id.substring(11,14));
+        }else if(this.id.substring(0,7)=="quebrar"){
+            ocultaQuebras(this.id.substring(0,7),this.id.substring(7,9));
+        }        
+        
     });
 
-    $("#quebrarO1").change(function() {
-        if( $('#quebrarO1 option:selected').val()=="sim"){
-            $('.numQuebrasO1').removeClass('hidden');
-            $('.numQuebrasO1').text = 2;
-            $('#rulesO1').addClass('hidden');
+    //função para ocultar as regras padrões
+    function ocultaRegras(nome,oscar){
+        if( $('#'+nome+oscar +' option:selected').val()=="sim"){
+            $('.quebrar'+oscar).removeClass('hidden');
+            $('#rules'+oscar).removeClass('hidden');
         }else{
-            $('.numQuebrasO1').addClass('hidden');
-            $('#rulesO1').removeClass('hidden');
-            $('.quebrasO1').addClass('hidden');
+            $('#rules'+oscar).addClass('hidden');
+            $('.quebrar'+oscar).addClass('hidden');
+            $('.quebras'+oscar).addClass('hidden');
         }
-    });
+
+    }
+    //função para ocultar as quebras
+    function ocultaQuebras(nome,oscar){
+        if( $('#'+nome+oscar+' option:selected').val()=="sim"){
+            // $('.numQuebrasO1').removeClass('hidden');
+             //$('.numQuebrasO1').text = 2;
+             $('#rules'+oscar).addClass('hidden');
+             $('.quebras'+oscar).removeClass('hidden');
+         }else{
+             $('.numQuebras'+oscar).addClass('hidden');
+             $('#rules'+oscar).removeClass('hidden');
+             $('.quebras'+oscar).addClass('hidden');
+             
+         }
+    }
 
     $('#numQuebrasO1').change(function(){
         if($('#numQuebrasO1').val()>=2 && $('#numQuebrasO1').val() <=7){
+           
             $('.quebrasO1').removeClass('hidden');
+                    
         }else{
             $('.quebrasO1').addClass('hidden');
+          
         }
     });
-
-
-
