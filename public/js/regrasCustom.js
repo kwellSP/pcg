@@ -37,7 +37,7 @@
             $('.quebras'+oscar).addClass('hidden');
         }
 
-    }
+    };
     //função para ocultar as quebras
     function ocultaQuebras(nome,oscar){
         if( $('#'+nome+oscar+' option:selected').val()=="sim"){
@@ -51,7 +51,26 @@
              $('.quebras'+oscar).addClass('hidden');
              
          }
-    }
+    };
+
+    //função para encontra os tamanhos
+   $("input[type='number']").bind("input", function() {
+        if(this.id.substring(5,6)=="P"){
+            MinMaxPartes(this.id.substring(0,3),this.id.substring(3,5),this.id.substring(5,7));
+        };
+    });
+
+    function MinMaxPartes(nome,oscar,partes){
+        alert('#min'+oscar+'P'+(parseInt(partes.substring(1,2))+1));
+        
+        if(nome=="max"){
+           $('#min'+oscar+'P'+(parseInt(partes.substring(1,2))+1)).val(
+               parseInt($('#'+nome+oscar+partes).val())+1);
+        }else{
+
+        }
+    };
+
 
     $('#numQuebrasO1').change(function(){
         if($('#numQuebrasO1').val()>=2 && $('#numQuebrasO1').val() <=7){
